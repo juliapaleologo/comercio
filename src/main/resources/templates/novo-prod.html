@@ -2,9 +2,6 @@
 
 <html>
 
-
-
-
 <head>
 
     <meta charset="UTF-8">
@@ -25,9 +22,6 @@
 
 </head>
 
-
-
-
 <body>
 
     <main class="container bg-light mt-4">
@@ -41,12 +35,6 @@
                     <i class="fas fa-list ml-2"></i>
 
                     Todos Produtos
-
-
-
-
-
-
                 </a>
 
                 <h2 class="mb-5">Novo Produto</h2>
@@ -57,68 +45,44 @@
 
                 <div class="border p-2">
 
-                    <form action="" method="post">
+                    <form th:action="@{/comercio/produtos/add-prod}" th:object="${produto}" method="post">
 
                         <div class="row">
-
-
-
-
-
 
                             <div class="form-group col-md-12">
 
                                 <label for="nome" class="col-form-label">Nome:</label>
 
-                                <input type="text" class="form-control" id="nome" placeholder="Nome">
+                                <input type="text" th:field="*{nome}" class="form-control" id="nome" placeholder="Nome">
 
                             </div>
-
-
-
-
-
 
                             <div class="form-group col-md-12">
 
                                 <label for="descricao" class="col-form-label">Descrição:</label>
 
-                                <textarea class="form-control" id="descricao" placeholder="Descrição"></textarea>
+                                <textarea class="form-control" th:field="*{descricao}" id="descricao" placeholder="Descrição"></textarea>
 
                             </div>
 
-
-
-
-
-
-                            <div class="form-group col-md-12">
+                           <div class="form-group col-md-12">
 
                                 <label for="codigoBarras" class="col-form-label">Código de Barras:</label>
 
-                                <input type="text" class="form-control" id="codigoBarras"
+                                <input type="text" th:field="*{codigoBarra}" class="form-control" id="codigoBarras"
 
                                     placeholder="Código de Barras">
 
                             </div>
 
 
-
-
-
-
                             <div class="form-group col-md-12">
 
                                 <label for="preco" class="col-form-label">Preço:</label>
 
-                                <input type="text" class="form-control" id="preco" placeholder="Preço">
+                                <input type="text" th:field="*{preco}" class="form-control" id="preco" placeholder="Preço">
 
                             </div>
-
-
-
-
-
 
                             <div class="form-group col-md-12">
 
@@ -141,40 +105,13 @@
                                 <input type="submit" class="btn-primary mb-2" value="Gravar Novo Produto">
 
                             </div>
-
-
-
-
-
-
                         </div>
-
                     </form>
 
-
-
-
-
-
                 </div>
-
-
-
-
-
-
             </div>
 
-
-
-
-
-
         </div>
-
-
-
-
     </main>
 
 </body>
